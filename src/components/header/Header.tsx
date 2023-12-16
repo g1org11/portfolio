@@ -17,14 +17,14 @@ const Header = () => {
       <HeaderWrapper>
         <Logo href="/">portfolio.</Logo>
         <NavDiv>
-          <nav>
+          <Nav>
             <UL>
               <li>About</li>
               <li>Tech Stack</li>
               <li>Projects</li>
               <li>Contact</li>
             </UL>
-          </nav>
+          </Nav>
           <SocialIcons>
             <a href="https://github.com/g1org11">
               <FontAwesomeIcon icon={faGithub} />
@@ -90,7 +90,11 @@ const NavDiv = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
+const Nav = styled.nav`
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
 const UL = styled.ul`
   display: flex;
   align-items: center;
@@ -127,6 +131,9 @@ const Modal = styled.div`
   left: 0;
 
   background-color: ${defaultTheme.colors.lightTheme.americanblue};
+  @media (max-width: 393px) {
+    top: 12%;
+  }
 `;
 const ModalUl = styled.div`
   display: flex;
