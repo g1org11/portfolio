@@ -1,10 +1,17 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { defaultTheme } from "../defaultTheme";
+import { useState } from "react";
 
-const Header: React.FC = () => {
+const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
   return (
     <ContainerDiv>
       <HeaderWrapper>
@@ -12,7 +19,6 @@ const Header: React.FC = () => {
         <NavDiv>
           <nav>
             <UL>
-              <li>Home</li>
               <li>About</li>
               <li>Tech Stack</li>
               <li>Projects</li>
@@ -28,18 +34,31 @@ const Header: React.FC = () => {
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
           </SocialIcons>
+          <ModaIcons>
+            <BurgerIcon show={!showMenu} onClick={toggleMenu}>
+              <FontAwesomeIcon icon={faBars} />
+            </BurgerIcon>
+
+            {showMenu && (
+              <XIcon show={showMenu} onClick={toggleMenu}>
+                <FontAwesomeIcon icon={faXmark} />
+              </XIcon>
+            )}
+          </ModaIcons>
         </NavDiv>
-        <Modal>
-          <nav>
-            <ModalUl>
-              <li>Home</li>
-              <li>About</li>
-              <li>Tech Stack</li>
-              <li>Projects</li>
-              <li>Contact</li>
-            </ModalUl>
-          </nav>
-        </Modal>
+
+        {showMenu && (
+          <Modal>
+            <nav>
+              <ModalUl>
+                <li>About</li>
+                <li>Tech Stack</li>
+                <li>Projects</li>
+                <li>Contact</li>
+              </ModalUl>
+            </nav>
+          </Modal>
+        )}
       </HeaderWrapper>
     </ContainerDiv>
   );
@@ -89,8 +108,6 @@ const UL = styled.ul`
 `;
 const SocialIcons = styled.div`
   a {
-    width: 30px;
-    height: 30px;
     svg {
       width: 30px;
       height: 30px;
@@ -103,10 +120,11 @@ const Modal = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 83%;
+  width: 100%;
   padding: 20px;
   position: absolute;
   top: 10%;
+  left: 0;
 
   background-color: ${defaultTheme.colors.lightTheme.americanblue};
 `;
@@ -122,5 +140,26 @@ const ModalUl = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: 26px;
+  }
+`;
+const ModaIcons = styled.div`
+  svg {
+    color: ${defaultTheme.colors.lightTheme.gradinategray};
+    width: 30px;
+    height: 30px;
+  }
+`;
+const BurgerIcon = styled.button`
+  all: unset;
+  display: none;
+  @media (max-width: 850px) {
+    display: ${(props) => (props.show ? "inline-block" : "none")};
+  }
+`;
+const XIcon = styled.button`
+  all: unset;
+  display: none;
+  @media (max-width: 850px) {
+    display: ${(props) => (props.show ? "inline-block" : "none")};
   }
 `;
