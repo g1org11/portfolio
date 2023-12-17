@@ -2,11 +2,13 @@ import React from "react";
 import Header from "./header/Header";
 import styled from "styled-components";
 import Hero from "./hero/Hero";
+import Languange from "./languanges/Languange";
 const SiteContainer = () => {
   return (
     <StyledContainer>
       <Header />
       <Hero />
+      <Languange />
     </StyledContainer>
   );
 };
