@@ -91,7 +91,7 @@ const NavDiv = styled.div`
   justify-content: center;
 `;
 const Nav = styled.nav`
-  @media (max-width: 850px) {
+  @media (max-width: 744px) {
     display: none;
   }
 `;
@@ -108,6 +108,9 @@ const UL = styled.ul`
     font-style: normal;
     font-weight: 500;
     line-height: 26px;
+    @media (max-width: 1100px) {
+      margin-right: 30px;
+    }
   }
 `;
 const SocialIcons = styled.div`
@@ -159,14 +162,14 @@ const ModaIcons = styled.div`
 const BurgerIcon = styled.button`
   all: unset;
   display: none;
-  @media (max-width: 850px) {
+  @media (max-width: 744px) {
     display: ${(props) => (props.show ? "inline-block" : "none")};
   }
 `;
 const XIcon = styled.button`
   all: unset;
   display: none;
-  @media (max-width: 850px) {
+  @media (max-width: 744px) {
     display: ${(props) => (props.show ? "inline-block" : "none")};
   }
 `;

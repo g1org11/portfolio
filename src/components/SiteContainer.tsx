@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "./header/Header";
 import styled from "styled-components";
-
+import Hero from "./hero/Hero";
 const SiteContainer = () => {
   return (
     <StyledContainer>
       <Header />
+      <Hero />
     </StyledContainer>
   );
 };
