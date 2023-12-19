@@ -38,7 +38,7 @@ const Infos = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 26px; /* 81.25% */
-    @media (max-width: 600px) {
+    @media (max-width: 60git0px) {
       font-size: 26px;
     }
   }

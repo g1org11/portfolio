@@ -3,12 +3,17 @@ import Header from "./header/Header";
 import styled from "styled-components";
 import Hero from "./hero/Hero";
 import Languange from "./languanges/Languange";
+import Projects from "./projects/Projects";
+import Footer from "./footer/Footer";
+
 const SiteContainer = () => {
   return (
     <StyledContainer>
       <Header />
       <Hero />
       <Languange />
+      <Projects />
+      <Footer />
     </StyledContainer>
   );
 };

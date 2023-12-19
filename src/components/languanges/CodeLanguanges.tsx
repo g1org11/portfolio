@@ -7,6 +7,7 @@ import bootstrap from "../../assets/bootstrap.svg";
 import react from "../../assets/react.svg";
 import git from "../../assets/git.svg";
 import github from "../../assets/github.svg";
+import styledComponents from "../../assets/styled-components-1.svg";
 const Codelanguanges = () => {
   return (
     <CodeDiv>
@@ -17,6 +18,7 @@ const Codelanguanges = () => {
       <img src={react}></img>
       <img src={git}></img>
       <img src={github}></img>
+      <img src={styledComponents}></img>
     </CodeDiv>
   );
 };
@@ -27,6 +29,15 @@ const CodeDiv = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 130px;
   margin-top: 120px;
+  img {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    @media (max-width: 393px) {
+      width: 90px;
+      height: 90px;
+    }
+  }
 `;

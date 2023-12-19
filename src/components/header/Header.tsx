@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { defaultTheme } from "../defaultTheme";
 import { useState } from "react";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -20,7 +20,7 @@ const Header = () => {
           <Nav>
             <UL>
               <li>About</li>
-              <li>Tech Stack</li>
+              <li>Technologies</li>
               <li>Projects</li>
               <li>Contact</li>
             </UL>
@@ -35,12 +35,12 @@ const Header = () => {
             </a>
           </SocialIcons>
           <ModaIcons>
-            <BurgerIcon show={!showMenu} onClick={toggleMenu}>
+            <BurgerIcon isVisible={!showMenu} onClick={toggleMenu}>
               <FontAwesomeIcon icon={faBars} />
             </BurgerIcon>
 
             {showMenu && (
-              <XIcon show={showMenu} onClick={toggleMenu}>
+              <XIcon isVisible={showMenu} onClick={toggleMenu}>
                 <FontAwesomeIcon icon={faXmark} />
               </XIcon>
             )}
@@ -52,7 +52,7 @@ const Header = () => {
             <nav>
               <ModalUl>
                 <li>About</li>
-                <li>Tech Stack</li>
+                <li>Technologies</li>
                 <li>Projects</li>
                 <li>Contact</li>
               </ModalUl>
@@ -163,13 +163,13 @@ const BurgerIcon = styled.button`
   all: unset;
   display: none;
   @media (max-width: 744px) {
-    display: ${(props) => (props.show ? "inline-block" : "none")};
+    display: ${(props) => (props.isVisible ? "inline-block" : "none")};
   }
 `;
 const XIcon = styled.button`
   all: unset;
   display: none;
   @media (max-width: 744px) {
-    display: ${(props) => (props.show ? "inline-block" : "none")};
+    display: ${(props) => (props.isVisible ? "inline-block" : "none")};
   }
 `;
