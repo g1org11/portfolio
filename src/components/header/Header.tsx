@@ -117,19 +117,24 @@ const UL = styled.ul`
   align-items: center;
   justify-content: center;
   li {
-    margin-right: 60px;
     list-style-type: none;
-    color: ${defaultTheme.colors.lightTheme.gradinategray};
-    font-family: ${defaultTheme.fonts.secondary};
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 26px;
+    a {
+      text-decoration: none;
+      color: ${defaultTheme.colors.lightTheme.gradinategray};
+      font-family: ${defaultTheme.fonts.secondary};
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 26px;
+    }
+    margin-right: 60px;
+
     @media (max-width: 1100px) {
       margin-right: 30px;
     }
   }
 `;
+// const NavLink = styled.link``;
 const SocialIcons = styled.div`
   a {
     svg {
@@ -161,12 +166,20 @@ const ModalUl = styled.div`
   text-align: center;
   li {
     list-style-type: none;
-    color: ${defaultTheme.colors.white};
-    font-family: ${defaultTheme.fonts.secondary};
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 26px;
+    a {
+      text-decoration: none;
+      color: ${defaultTheme.colors.white};
+      font-family: ${defaultTheme.fonts.secondary};
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 26px;
+    }
+    margin-right: 60px;
+
+    @media (max-width: 1100px) {
+      margin-right: 30px;
+    }
   }
 `;
 const ModaIcons = styled.div`
