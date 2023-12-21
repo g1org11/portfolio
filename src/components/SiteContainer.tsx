@@ -14,16 +14,21 @@ const SiteContainer = () => {
       <StyledContainer>
         <Header />
         <Routes>
-          <Route path="/" element={""} />
+          <Route
+            path="/"
+            element={
+              <div>
+                <Hero />
+                <Languange />
+                <Projects />
+                <Footer />
+              </div>
+            }
+          />
           <Route path="/languages" element={<Languange />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<AboutUs />} />
         </Routes>
-
-        <Hero />
-        <Languange />
-        <Projects />
-        <Footer />
       </StyledContainer>
     </Router>
   );
