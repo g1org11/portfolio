@@ -5,6 +5,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { defaultTheme } from "../defaultTheme";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -19,10 +20,18 @@ const Header: React.FC = () => {
         <NavDiv>
           <Nav>
             <UL>
-              <li>About</li>
-              <li>Technologies</li>
-              <li>Projects</li>
-              <li>Contact</li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/languages">Technologies</Link>
+              </li>
+              <li>
+                <Link to="/projects">Projects</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
             </UL>
           </Nav>
           <SocialIcons>
@@ -51,10 +60,18 @@ const Header: React.FC = () => {
           <Modal>
             <nav>
               <ModalUl>
-                <li>About</li>
-                <li>Technologies</li>
-                <li>Projects</li>
-                <li>Contact</li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
+                  <Link to="/languages">Technologies</Link>
+                </li>
+                <li>
+                  <Link to="/projects">Projects</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contact</Link>
+                </li>
               </ModalUl>
             </nav>
           </Modal>

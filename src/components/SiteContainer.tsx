@@ -1,20 +1,31 @@
 import React from "react";
-import Header from "./header/Header";
 import styled from "styled-components";
+import Header from "./header/Header";
 import Hero from "./hero/Hero";
 import Languange from "./languanges/Languange";
 import Projects from "./projects/Projects";
 import Footer from "./footer/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AboutUs from "../pages/AboutUs";
 
 const SiteContainer = () => {
   return (
-    <StyledContainer>
-      <Header />
-      <Hero />
-      <Languange />
-      <Projects />
-      <Footer />
-    </StyledContainer>
+    <Router>
+      <StyledContainer>
+        <Header />
+        <Routes>
+          <Route path="/" element={""} />
+          <Route path="/languages" element={<Languange />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<AboutUs />} />
+        </Routes>
+
+        <Hero />
+        <Languange />
+        <Projects />
+        <Footer />
+      </StyledContainer>
+    </Router>
   );
 };
 
