@@ -7,6 +7,7 @@ import Projects from "./projects/Projects";
 import Footer from "./footer/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutUs from "../pages/AboutUs";
+import Contact from "../pages/Contact";
 
 const SiteContainer = () => {
   return (
@@ -28,6 +29,15 @@ const SiteContainer = () => {
           <Route path="/languages" element={<Languange />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route
+            path="/contact"
+            element={
+              <div>
+                <Contact />
+                <Footer />
+              </div>
+            }
+          />
         </Routes>
       </StyledContainer>
     </Router>
