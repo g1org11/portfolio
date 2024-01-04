@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import html from "../../assets/html.svg";
 import css from "../../assets/css.svg";

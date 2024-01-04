@@ -1,9 +1,17 @@
-import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../defaultTheme";
 import chain from "../../assets/chain.svg";
 import githubIcon from "../../assets/githubIcon.svg";
-const Project = ({ img, title, info, tech, live, code }) => {
+
+interface props {
+  img: string;
+  title: string;
+  info: string;
+  tech: string;
+  live: string;
+  code: string;
+}
+const Project: React.FC<props> = ({ img, title, info, tech, live, code }) => {
   return (
     <ProjectContainer>
       <img src={img}></img>
