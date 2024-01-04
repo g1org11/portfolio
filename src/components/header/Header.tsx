@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +6,7 @@ import { defaultTheme } from "../defaultTheme";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header: React.FC = () => {
+const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -189,17 +188,18 @@ const ModaIcons = styled.div`
     height: 30px;
   }
 `;
-const BurgerIcon = styled.button`
+const BurgerIcon = styled.button<{ isVisible: boolean }>`
   all: unset;
   display: none;
   @media (max-width: 744px) {
-    display: ${(props) => (props.isVisible ? "inline-block" : "none")};
+    display: ${(props: { isVisible: unknown }) => (props.isVisible ? "inline-block" : "none")};
   }
 `;
-const XIcon = styled.button`
+
+const XIcon = styled.button<{ isVisible: boolean }>`
   all: unset;
   display: none;
   @media (max-width: 744px) {
-    display: ${(props) => (props.isVisible ? "inline-block" : "none")};
+    display: ${(props: { isVisible: unknown }) => (props.isVisible ? "inline-block" : "none")};
   }
 `;
